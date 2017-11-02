@@ -1,2 +1,3 @@
-# battleship
-a battleship game from head first
+# Head First JavaScript Programming
+### battleship game
+### BubbleFactory
