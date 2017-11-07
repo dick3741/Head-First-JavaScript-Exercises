@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>phoneNumber</title>
+  </head>
+  <body>
+    <script>
+/* 要求：判定是不是一个电话号码，类似123-4567，中间的连接符非必须 */
+
+    /* 方法一*/
+      function validate(phoneNumber){
+        if (phoneNumber.length >8 || phoneNumber.length <7){
+          return false;
+        }
+        for(let i=0;i<phoneNumber.length;i++){
+          if(i===3){
+            if(phoneNumber.length===8 && phoneNumber.charAt(i) !== '-'){
+              return false;
+            }else if (phoneNumber.length ===7 && isNaN(phoneNumber.charAt(i))){
+              return false
+            }else if (isNaN(phoneNumber.charAt(i))){
+              return false;
+            }
+          }
+          return true;
+        }
+      }
+   /* 方法二*/
+      function validate(phoneNumber){
+        if (phoneNumber.length >8 || phoneNumber.length <7){
+          return false;
+        }
+        var first = phoneNumber.substring(0,3);
+        var second = phoneNumber.substring(phoneNumber.length-4);
+        if(isNaN(first) && isNaN(second)){
+          return false;
+        }
+        if (phoneNumber.length ===8){
+          retun (phoneNumber.charAt(3)=== '-');
+        }
+        return true;
+      }
+  /* 方法三*/
+      function validate(phoneNumber){
+        return phoneNumber.match(/^\d{3}-?\d{4}$/);
+      }
+    </script>
+  </body>
+</html>
