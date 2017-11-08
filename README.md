@@ -1,4 +1,6 @@
 # Head First JavaScript Programming
-### #battleship game
-### #BubbleFactory--Array
-### #Planet--DOM
+### #battleShip game
+### #bubbleFactory--Array
+### #planet--DOM
+
+### #bettleShip game(full)
